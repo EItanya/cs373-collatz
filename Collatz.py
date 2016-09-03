@@ -32,18 +32,24 @@ def collatz_eval(i, j):
     return the max cycle length of the range [i, j]
     """
     # <your code>
+    cache = dict()
+
     assert i <= j
     maximum = 0
     for number in range(i, j):
         assert number > 0
         c = 1
-        while number > 1 :
-            if (number % 2) == 0 :
-                number = (number // 2)
-            else :
-                number = (3 * number) + 1
-            c += 1
-        assert c > 0
+        try:
+            c = cache[number]
+        except KeyError:
+            c = 1
+            while number > 1 :
+                if (number % 2) == 0 :
+                    number = (number // 2)
+                else :
+                    number = (3 * number) + 1
+                c += 1
+            assert c > 0
         if(c > maximum):
             maximum = c
 
