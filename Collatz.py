@@ -35,21 +35,24 @@ def collatz_eval(i, j):
     cache = dict()
 
     assert i <= j
-    maximum = 0
+    maximum = 1
     for number in range(i, j):
         assert number > 0
+        temp = number
         c = 1
-        try:
-            c = cache[number]
-        except KeyError:
-            c = 1
-            while number > 1 :
+
+        while number > 1 :
+            if (number in cache):
+                c += cache[number]
+                break
+            else :
                 if (number % 2) == 0 :
                     number = (number // 2)
                 else :
                     number = (3 * number) + 1
                 c += 1
-            assert c > 0
+        assert c > 0
+        cache[temp] = c
         if(c > maximum):
             maximum = c
 
