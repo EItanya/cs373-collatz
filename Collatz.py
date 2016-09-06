@@ -43,7 +43,7 @@ def collatz_eval(i, j):
 
         while number > 1 :
             if (number in cache):
-                c += cache[number]
+                c += cache[number] -1
                 break
             else :
                 if (number % 2) == 0 :

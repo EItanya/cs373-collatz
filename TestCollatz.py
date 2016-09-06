@@ -27,11 +27,28 @@ class TestCollatz (TestCase):
     # read
     # ----
 
-    def test_read(self):
+    def test_read_1(self):
         s = "1 10\n"
         i, j = collatz_read(s)
         self.assertEqual(i,  1)
         self.assertEqual(j, 10)
+
+    def test_read_1(self):
+        s = "100 200\n"
+        i, j = collatz_read(s)
+        self.assertEqual(i,  100)
+        self.assertEqual(j, 200)
+    def test_read_1(self):
+        s = "201 210\n"
+        i, j = collatz_read(s)
+        self.assertEqual(i,  201)
+        self.assertEqual(j, 210)
+    def test_read_1(self):
+        s = "900 1000\n"
+        i, j = collatz_read(s)
+        self.assertEqual(i,  900)
+        self.assertEqual(j, 1000)
+
 
     # ----
     # eval
@@ -57,21 +74,50 @@ class TestCollatz (TestCase):
     # print
     # -----
 
-    def test_print(self):
+    def test_print_1(self):
         w = StringIO()
         collatz_print(w, 1, 10, 20)
         self.assertEqual(w.getvalue(), "1 10 20\n")
+
+    def test_print_2(self):
+        w = StringIO()
+        collatz_print(w, 100, 200, 125)
+        self.assertEqual(w.getvalue(), "100 200 125\n")
+
+    def test_print_3(self):
+        w = StringIO()
+        collatz_print(w, 201, 210, 89)
+        self.assertEqual(w.getvalue(), "201 210 89\n")
+
+    def test_print_4(self):
+        w = StringIO()
+        collatz_print(w, 900, 1000, 174)
+        self.assertEqual(w.getvalue(), "900 1000 174\n")
 
     # -----
     # solve
     # -----
 
-    def test_solve(self):
+    def test_solve_1(self):
         r = StringIO("1 10\n100 200\n201 210\n900 1000\n")
         w = StringIO()
         collatz_solve(r, w)
         self.assertEqual(
             w.getvalue(), "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
+
+    def test_solve_2(self):
+        r = StringIO("5 15\n500 750\n250 450\n150 175\n")
+        w = StringIO()
+        collatz_solve(r, w)
+        self.assertEqual(
+            w.getvalue(), "5 15 20\n500 750 171\n250 450 144\n150 175 125\n")
+
+    def test_solve_3(self):
+        r = StringIO("30 75\n250 290\n2000 3000\n9000 10000\n")
+        w = StringIO()
+        collatz_solve(r, w)
+        self.assertEqual(
+            w.getvalue(), "30 75 116\n250 290 123\n2000 3000 217\n9000 10000 260\n")
 
 # ----
 # main
