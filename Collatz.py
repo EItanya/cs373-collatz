@@ -36,7 +36,7 @@ def collatz_eval(i, j):
 
     assert i <= j
     maximum = 1
-    for number in range(i, j):
+    for number in range(i, j+1):
         assert number > 0
         temp = number
         c = 1
