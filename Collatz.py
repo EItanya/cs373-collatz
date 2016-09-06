@@ -41,14 +41,14 @@ def collatz_eval(i, j):
         temp = number
         c = 1
 
-        while number > 1 :
+        while number > 1:
             if (number in cache):
                 c += cache[number] -1
                 break
-            else :
-                if (number % 2) == 0 :
+            else:
+                if (number % 2) == 0:
                     number = (number // 2)
-                else :
+                else:
                     number = (3 * number) + 1
                 c += 1
         assert c > 0
