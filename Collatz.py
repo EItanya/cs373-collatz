@@ -107,24 +107,6 @@ def cycle_max(i, j):
     return maximum
 
 
-# -------------
-# collatz_single
-# -------------
-
-
-def collatz_single(number):
-    """
-    Returns the cycle length for a single number
-    """
-    c = 1
-    while number > 1:
-        if (number % 2) == 0:
-            number = (number // 2)
-        else:
-            number = (3 * number) + 1
-        c+=1
-    assert c > 0
-    return c
 
 # -------------
 # collatz_print
