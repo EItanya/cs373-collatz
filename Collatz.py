@@ -33,6 +33,7 @@ def collatz_eval(i, j, meta_cache):
     i the beginning of the range, inclusive
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
+    This function uses the meta_cache to try and find the answer it is looking for without needing to compute
     """ 
     if(j <= i):
         temp = i
@@ -76,6 +77,7 @@ def cycle_max(i, j):
     i the beginning of the range, inclusive
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
+    This function is called when computation is actually needed because the value isnt in the pre computed meta_cache
     """
     # <your code>
     # cache = dict()
