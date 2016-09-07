@@ -12,14 +12,23 @@
 
 import sys
 
-from Collatz import collatz_solve
+from Collatz import collatz_solve, cycle_max 
 
 # ----
 # main
 # ----
 
 if __name__ == "__main__":
-    collatz_solve(sys.stdin, sys.stdout)
+    meta_cache = []
+    for i in range(0, 10000):
+        real_value = i * 100
+        second_value = real_value+99
+        if(real_value == 0):
+            real_value = 1
+        max_cycle = cycle_max(real_value, second_value)    
+        meta_cache.append(max_cycle)
+
+    collatz_solve(sys.stdin, sys.stdout, meta_cache)
 
 """ #pragma: no cover
 % cat RunCollatz.in
