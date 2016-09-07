@@ -10,7 +10,7 @@
 # collatz_read
 # ------------
 
-cache = dict()
+# cache = dict()
 
 def collatz_read(s):
     """
@@ -35,7 +35,7 @@ def collatz_eval(i, j):
     return the max cycle length of the range [i, j]
     """
     # <your code>
-    # cache = dict()
+    cache = dict()
 
     # assert i <= j
 
@@ -67,29 +67,10 @@ def collatz_eval(i, j):
 
     return maximum
 
-
-# -------------
-# collatz_single
-# -------------
-
-
-def collatz_single(number):
-    """
-    Returns the cycle length for a single number
-    """
-    c = 1
-    while number > 1:
-        if (number % 2) == 0:
-            number = (number // 2)
-        else:
-            number = (3 * number) + 1
-        c+=1
-    assert c > 0
-    return c
-
 # -------------
 # collatz_print
 # -------------
+
 
 def collatz_print(w, i, j, v):
     """
@@ -117,3 +98,52 @@ def collatz_solve(r, w):
         i, j = collatz_read(s)
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
+
+#!/usr/bin/env python3
+
+# ------------------------------
+# projects/collatz/RunCollatz.py
+# Copyright (C) 2016
+# Glenn P. Downing
+# ------------------------------
+
+# -------
+# imports
+# -------
+
+import sys
+
+# from Collatz import collatz_solve
+
+# ----
+# main
+# ----
+
+if __name__ == "__main__":
+    collatz_solve(sys.stdin, sys.stdout)
+
+""" #pragma: no cover
+% cat RunCollatz.in
+1 10
+100 200
+201 210
+900 1000
+
+
+
+% RunCollatz.py < RunCollatz.in > RunCollatz.out
+
+
+
+% cat RunCollatz.out
+1 10 1
+100 200 1
+201 210 1
+900 1000 1
+
+
+
+% pydoc3 -w Collatz
+# That creates the file Collatz.html
+"""
