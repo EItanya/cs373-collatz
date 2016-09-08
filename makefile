@@ -6,12 +6,11 @@ FILES :=                              \
     RunCollatz.out                    \
     RunCollatz.py                     \
     TestCollatz.out                   \
-    TestCollatz.py
-
-#    collatz-tests/EID-RunCollatz.in   \
-#    collatz-tests/EID-RunCollatz.out  \
-#    collatz-tests/EID-TestCollatz.out \
-#    collatz-tests/EID-TestCollatz.py  \
+    TestCollatz.py   									\
+		collatz-tests/eyy79-RunCollatz.in   \
+		collatz-tests/eyy79-RunCollatz.out  \
+   	collatz-tests/eyy79-TestCollatz.out \
+   	collatz-tests/eyy79-TestCollatz.py  \
 
 .pylintrc:
 	pylint --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@

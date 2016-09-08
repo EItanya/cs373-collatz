@@ -23,7 +23,8 @@
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl><dt><a name="-collatz_eval"><strong>collatz_eval</strong></a>(i, j, meta_cache)</dt><dd><tt>i&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;range,&nbsp;inclusive<br>
 j&nbsp;the&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;range,&nbsp;inclusive<br>
-return&nbsp;the&nbsp;max&nbsp;cycle&nbsp;length&nbsp;of&nbsp;the&nbsp;range&nbsp;[i,&nbsp;j]</tt></dd></dl>
+return&nbsp;the&nbsp;max&nbsp;cycle&nbsp;length&nbsp;of&nbsp;the&nbsp;range&nbsp;[i,&nbsp;j]<br>
+This&nbsp;function&nbsp;uses&nbsp;the&nbsp;meta_cache&nbsp;to&nbsp;try&nbsp;and&nbsp;find&nbsp;the&nbsp;answer&nbsp;it&nbsp;is&nbsp;looking&nbsp;for&nbsp;without&nbsp;needing&nbsp;to&nbsp;compute</tt></dd></dl>
  <dl><dt><a name="-collatz_print"><strong>collatz_print</strong></a>(w, i, j, v)</dt><dd><tt>print&nbsp;three&nbsp;ints<br>
 w&nbsp;a&nbsp;writer<br>
 i&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;range,&nbsp;inclusive<br>
@@ -37,7 +38,8 @@ r&nbsp;a&nbsp;reader<br>
 w&nbsp;a&nbsp;writer</tt></dd></dl>
  <dl><dt><a name="-cycle_max"><strong>cycle_max</strong></a>(i, j)</dt><dd><tt>i&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;range,&nbsp;inclusive<br>
 j&nbsp;the&nbsp;end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;range,&nbsp;inclusive<br>
-return&nbsp;the&nbsp;max&nbsp;cycle&nbsp;length&nbsp;of&nbsp;the&nbsp;range&nbsp;[i,&nbsp;j]</tt></dd></dl>
+return&nbsp;the&nbsp;max&nbsp;cycle&nbsp;length&nbsp;of&nbsp;the&nbsp;range&nbsp;[i,&nbsp;j]<br>
+This&nbsp;function&nbsp;is&nbsp;called&nbsp;when&nbsp;computation&nbsp;is&nbsp;actually&nbsp;needed&nbsp;because&nbsp;the&nbsp;value&nbsp;isnt&nbsp;in&nbsp;the&nbsp;pre&nbsp;computed&nbsp;meta_cache</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
