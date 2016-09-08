@@ -10,7 +10,7 @@
 # collatz_read
 # ------------
 
-cache = dict()
+# cache = dict()
 
 def collatz_read(s):
     """
@@ -28,62 +28,21 @@ def collatz_read(s):
 # ------------
 
 
-def collatz_eval(i, j, meta_cache):
+def collatz_eval(i, j):
     """
     i the beginning of the range, inclusive
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
-    This function uses the meta_cache to try and find the answer it is looking for without needing to compute
-    """ 
+    """
+    # <your code>
+    cache = dict()
+
+    # assert i <= j
+
     if(j <= i):
         temp = i
         i = j
         j = temp
-    maximum = 1
-    interval_cycle_length = 1
-    while i < j:      
-        #print(i, j)
-        interval_cycle_length = 0
-        if (j -i < 100):
-            interval_cycle_length = cycle_max(i,j)
-            i += (j-i)
-        elif(i % 100 != 0) and (i + 100 <= j):
-            distance = 100 - (i%100)
-            interval_cycle_length = cycle_max(i, i+distance)
-            i += distance
-        else:     
-            interval_cycle_length = meta_cache[i//100]
-            #print(meta_cache[i//100])
-            #print(i//100)
-            i = i+100
-        #print(interval_cycle_length)
-        if interval_cycle_length > maximum:
-            maximum = interval_cycle_length
-       # else if(i % 100 == 0) and (i+99 < j):
-           # interval_cycle_length = meta_cache[i]
-           # i = i+100
-    return maximum
-
-        
-        
-
-
-# ------------
-# cycle_max 
-# ------------
-
-def cycle_max(i, j):
-    """
-    i the beginning of the range, inclusive
-    j the end       of the range, inclusive
-    return the max cycle length of the range [i, j]
-    This function is called when computation is actually needed because the value isnt in the pre computed meta_cache
-    """
-    # <your code>
-    # cache = dict()
-
-    # assert i <= j
-
 
     maximum = 1
     for number in range(i, j+1):
@@ -108,11 +67,10 @@ def cycle_max(i, j):
 
     return maximum
 
-
-
 # -------------
 # collatz_print
 # -------------
+
 
 def collatz_print(w, i, j, v):
     """
@@ -129,9 +87,8 @@ def collatz_print(w, i, j, v):
 # -------------
 
 
-def collatz_solve(r, w, meta_cache):
+def collatz_solve(r, w):
     """
-    meta_cache is a pre-set cache
     r a reader
     w a writer
     """
@@ -139,5 +96,54 @@ def collatz_solve(r, w, meta_cache):
         if (s.strip() == ""):
             continue
         i, j = collatz_read(s)
-        v = collatz_eval(i, j, meta_cache)
+        v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
+
+#!/usr/bin/env python3
+
+# ------------------------------
+# projects/collatz/RunCollatz.py
+# Copyright (C) 2016
+# Glenn P. Downing
+# ------------------------------
+
+# -------
+# imports
+# -------
+
+import sys
+
+# from Collatz import collatz_solve
+
+# ----
+# main
+# ----
+
+if __name__ == "__main__":
+    collatz_solve(sys.stdin, sys.stdout)
+
+""" #pragma: no cover
+% cat RunCollatz.in
+1 10
+100 200
+201 210
+900 1000
+
+
+
+% RunCollatz.py < RunCollatz.in > RunCollatz.out
+
+
+
+% cat RunCollatz.out
+1 10 1
+100 200 1
+201 210 1
+900 1000 1
+
+
+
+% pydoc3 -w Collatz
+# That creates the file Collatz.html
+"""

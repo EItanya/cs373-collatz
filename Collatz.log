@@ -1,3 +1,87 @@
+commit 0e32cfef0d49a743928b4b7c6f1cbb3979948b3d
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Wed Sep 7 10:25:25 2016 -0500
+
+    Made test cases for RunCollatz.in and made some fixes to the makefile
+
+commit b703aaf10e0725ee1e20a80041125873a1b28db6
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Wed Sep 7 09:48:51 2016 -0500
+
+    Fixed up the test cases
+
+commit 60163a165d52cb222f121ec6350e88207e78386d
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Wed Sep 7 08:33:04 2016 -0500
+
+    Sphere now works
+
+commit eb959d1a1ecff2debefdc53e57f62d5b41dc7976
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Wed Sep 7 06:49:46 2016 -0500
+
+    Sphere is now timing out, so I have to implement a meta cache
+
+commit 3477c4aacd4bda086f16fa13782aa312c97cb2c7
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Tue Sep 6 11:16:54 2016 -0500
+
+    Did some coverage fix for my unit tests
+
+commit 8c06fb4c0c62b2fdecfe69e534bf8b0a86ac2152
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Tue Sep 6 11:03:04 2016 -0500
+
+    close #14 and test cases are done
+
+commit b576203bc9d9933bd7ec136c04eb519b69efa92f
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Tue Sep 6 09:29:07 2016 -0500
+
+    Now collatz works when passing in the same number twice
+
+commit 10f2836489aaec321bcdefce39a45d7ecb9273b5
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Sat Sep 3 17:18:06 2016 -0500
+
+    Needed to change output, well be back later to fix
+
+commit c70034fa32fee8b50b2b684e47d33151dc0e84ce
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Sat Sep 3 17:16:09 2016 -0500
+
+    Had to change permissions on all the files to make test work
+
+commit c0234ac90d68f38e9f8fe1d892e141080a4a1774
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Sat Sep 3 17:13:19 2016 -0500
+
+    Cache is now working but result is sometimes off by 4
+
+commit 2853f0b029871c6338798625e2d46eec0f0aa95e
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Sat Sep 3 16:41:52 2016 -0500
+
+    Added temp cache and also fixed #13
+
+commit f2a8a849f14cd0cba7951d747112cc5d54a9d7d2
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Sat Sep 3 16:14:47 2016 -0500
+
+    Now finds the max cycle and tests properly
+
+commit 2e6c559521cca1cde09b05139c14931901758b7a
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Sat Sep 3 15:53:10 2016 -0500
+
+    Edited RunCollatz.out
+
+commit 75214d003aec7216f2908df9a9ea34fe4ac0d133
+Author: Eitan Yarmush <eitanya@cs.utexas.edu>
+Date:   Sat Sep 3 15:43:54 2016 -0500
+
+    Added all code files into private repo
+
 commit e3ce71e96542be7f3594f76e8f29057f09654a07
 Author: Eitan Yarmush <eitanya@cs.utexas.edu>
 Date:   Sat Sep 3 15:38:20 2016 -0500

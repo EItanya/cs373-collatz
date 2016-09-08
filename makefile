@@ -34,8 +34,8 @@ RunCollatz.tmp: RunCollatz.in RunCollatz.out RunCollatz.py
 TestCollatz.tmp: TestCollatz.py
 	-pylint Collatz.py
 	-pylint TestCollatz.py
-	coverage3 run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1
-	coverage3 report -m                      >> TestCollatz.tmp
+	python3.5 -m coverage run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1
+	python3.5 -m coverage report -m                      >> TestCollatz.tmp
 	cat TestCollatz.tmp
 
 check:
